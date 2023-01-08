@@ -1,0 +1,21 @@
+# IntelliJ debris
+.idea
+*.iml
+
+# Vim debris
+.*.swp
+
+# VScode debris
+.vscode
+
+# Maven build artifacts
+target
+
+# Vagrant artifacts
+.vagrant
+
+# Spring boot local configuration
+config
+
+# MacOS finder depris
+.DS_Store
