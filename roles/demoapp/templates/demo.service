@@ -1,0 +1,12 @@
+[Unit]
+Description=demo
+After=syslog.target
+
+[Service]
+User=demo
+Group=demo
+ExecStart={{ artifact_dest_path }}/{{ startup_script_name }}
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+= Vagrant docker provider demo with Ansible provisioning
+
+== Overview
+
+Four VM cluster based on a centos:7 container
+
+Uses an image defined here: https://github.com/bobspiller/vagrant-docker
+
+Includes ...
+
+- running systemd and services
+- sshd
+- full control over
+** hostname
+** vm IP address
+** sshd host-port mapping

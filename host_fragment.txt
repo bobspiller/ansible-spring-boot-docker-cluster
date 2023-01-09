@@ -1,0 +1,7 @@
+#
+# Copy this fragment into your /etc/hosts file
+
+#
+# ansible-spring-boot-docker-cluster - BEGIN
+127.0.0.1 lb.vm app1.vm app2.vm app3.vm
+# ansible-spring-boot-docker-cluster - END

@@ -1,0 +1,3 @@
+---
+- import_playbook: "loadbalancer-play.yml"
+- import_playbook: "demoapp-play.yml"

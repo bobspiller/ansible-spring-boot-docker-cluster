@@ -1,0 +1,21 @@
+---
+- name: ensure haproxy group is present
+  group:
+    gid: 2000
+    name: haproxy
+    state: present
+- name: ensure haproxy user is present
+  user:
+    uid: 2000
+    name: haproxy
+    group: haproxy
+    state: present
+- name: ensure that haproxy is present
+  yum:
+    name: haproxy
+    state: present
+- name: ensure that haproxy service is started
+  systemd:
+    name: haproxy
+    state: started
+    enabled: true

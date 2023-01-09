@@ -1,0 +1,59 @@
+---
+- name: interrogate the os family for each host
+  debug: 
+    msg: "Greetings from {{ inventory_hostname}}: I'm a {{ ansible_facts['os_family'] }}"
+- name: ensure demo group is present
+  group:
+    gid: 5000
+    name: demo
+    state: present
+- name: ensure demo user is present
+  user:
+    uid: 5000
+    name: demo
+    group: demo
+    state: present
+- name: ensure app install directory is present
+  file:
+    path: "{{ artifact_dest_path }}"
+    state: directory
+    mode: '0755'
+    owner: demo
+    group: demo
+- name: ensure app log directory is present
+  file:
+    path: /var/log/demo/
+    state: directory
+    mode: '0755'
+    owner: demo
+    group: demo
+- name: ensure current demo application build is installed
+  copy:
+    src: "{{ artifact_source }}"
+    dest: "{{ artifact_dest_path }}/{{ artifact_target_name }}"
+    owner: demo
+    group: demo
+    mode: '0644'
+- name: ensure demo application configuration is installed
+  copy:
+    src: application.properties
+    dest: "{{ artifact_dest_path }}"
+    owner: demo
+    group: demo
+    mode: '0644'
+- name: ensure demo application startup script is installed
+  template:
+    src: "{{ startup_script_name }}"
+    dest: "{{ artifact_dest_path }}"
+    owner: demo
+    group: demo
+    mode: '0755'
+- name: ensure demo service unit file is installed
+  template:
+    src: demo.service
+    dest: "/etc/systemd/system"
+    mode: '0644'
+- name: Make sure the demo service is running
+  systemd:
+    state: started
+    name: demo

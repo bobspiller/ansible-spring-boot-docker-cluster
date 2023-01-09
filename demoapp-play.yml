@@ -1,0 +1,7 @@
+---
+- hosts: demoapp
+  become: yes
+  roles:
+  - linux-server
+  - java-runtime
+  - demoapp

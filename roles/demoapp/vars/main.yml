@@ -1,0 +1,5 @@
+---
+artifact_source: "target/ansible-spring-boot-cluster-1.0-SNAPSHOT.jar"
+artifact_dest_path: "/opt/demo"
+artifact_target_name: ansible-spring-boot-cluster.jar
+startup_script_name: startup.sh

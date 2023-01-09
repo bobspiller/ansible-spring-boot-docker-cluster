@@ -1,0 +1,11 @@
+[all]
+app1.vm
+app2.vm
+lb.vm
+
+[loadbalancer]
+lb.vm
+
+[demoapp]
+app1.vm
+app2.vm

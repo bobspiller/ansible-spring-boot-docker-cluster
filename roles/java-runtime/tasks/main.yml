@@ -1,0 +1,15 @@
+---
+- name: ensure AdoptJDK package repo is configured
+  yum_repository:
+    name: AdoptOpenJDK
+    description: AdoptOpenJDK
+    baseurl: https://packages.adoptium.net/artifactory/rpm/centos/$releasever/$basearch
+    enabled: true
+    gpgcheck: true
+    gpgkey: https://packages.adoptium.net/artifactory/api/gpg/key/public
+    state: present
+- name: ensure open JRE 11 is installed
+  yum:
+    name: "temurin-{{ jre_version }}-jdk"
+    state: latest
+    

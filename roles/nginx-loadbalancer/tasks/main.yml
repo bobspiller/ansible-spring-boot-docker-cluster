@@ -1,0 +1,37 @@
+---
+- name: ensure nginx group is present
+  group:
+    gid: 2001
+    name: nginx
+    state: present
+- name: ensure nginx user is present
+  user:
+    uid: 2001
+    name: nginx
+    group: nginx
+    state: present
+# - name: Ensure httpd_can_network_connect flag is set and persistent across reboots
+#   command: /usr/sbin/setsebool -P httpd_can_network_connect 1
+#   become: true
+- name: ensure nginx package repo is configured
+  yum_repository:
+    name: nginx
+    description: nginx repo
+    baseurl: http://nginx.org/packages/mainline/centos/7/$basearch/
+    enabled: true
+    gpgcheck: false
+    state: present
+- name: ensure that nginx is present
+  yum:
+    name: nginx
+    state: present
+- name: ensure nginx configuration is installed
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    mode: '0644'
+- name: ensure that nginx service is started
+  systemd:
+    name: nginx
+    state: started
+    enabled: true
