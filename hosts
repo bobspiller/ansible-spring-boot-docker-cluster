@@ -1,13 +1,13 @@
 [all]
-lb.vm   ansible_port=2200 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
-app1.vm ansible_port=2201 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
-app2.vm ansible_port=2202 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
-app3.vm ansible_port=2203 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
+lb.vm   ansible_port=2200 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+app1.vm ansible_port=2201 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+app2.vm ansible_port=2202 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+app3.vm ansible_port=2203 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
 
 [loadbalancer]
-lb.vm   ansible_port=2200 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
+lb.vm   ansible_port=2200 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
 
 [demoapp]
-app1.vm ansible_port=2201 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
-app2.vm ansible_port=2202 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
-app3.vm ansible_port=2203 ansible_ssh_private_key_file=/Users/bspiller/.vagrant.d/insecure_private_key
+app1.vm ansible_port=2201 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+app2.vm ansible_port=2202 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
+app3.vm ansible_port=2203 ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key
