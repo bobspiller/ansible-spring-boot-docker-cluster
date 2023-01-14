@@ -1,16 +1,22 @@
 = Vagrant docker provider demo with Ansible provisioning
+icons :font:
 
 == Overview
 
-Four VM cluster based on a centos:7 container
+Four VM cluster based on https://developer.hashicorp.com/vagrant/docs/providers/docker[Vagrant running a docker container].
 
-Uses an image defined here: https://github.com/bobspiller/vagrant-docker
+This project is essentially a testbed for testing containers produced by my https://github.com/bobspiller/vagrant-docker[vagrant-docker project].  
+It will use the https://github.com/bobspiller/vagrant-docker/tree/master/centos-7[centos-vagrant:7] image by default.
+Alternate images can be used by passing a `VAGRANT_IMAGE` invironment to the `vagrant up` command, for example:
 
-Includes ...
+----
+$ VAGRANT_IMAGE=rockyos-vagrant:9.1
+----
 
-- running systemd and services
-- sshd
-- full control over
-** hostname
-** vm IP address
-** sshd host-port mapping
+NOTE: Running this project with the https://github.com/bobspiller/vagrant-docker/tree/master/rocky-linux-9[rockyos-vagrant:9.1] image is still a Work In Progress
+
+Using Vagrant to manage a cluster of VM-like containers has some advantages including having full control over:
+
+* hostname
+* vm IP address
+* sshd host-port mapping

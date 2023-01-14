@@ -23,10 +23,12 @@ Vagrant.configure("2") do |config|
         }
     ]
   
+    box_image = ENV["VAGRANT_IMAGE"] || "centos-vagrant:7"
+
     machines.each do |machine|
       config.vm.define machine[:hostname] do |app|
         config.vm.provider "docker" do |d|
-          d.image = "centos-vagrant:7"
+          d.image = box_image
           d.has_ssh = true
           d.remains_running = true
           d.create_args = ["--privileged"]
