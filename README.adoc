@@ -7,7 +7,7 @@ Four VM cluster based on https://developer.hashicorp.com/vagrant/docs/providers/
 
 This project is essentially a testbed for testing containers produced by my https://github.com/bobspiller/vagrant-docker[vagrant-docker project].  
 It will use the https://github.com/bobspiller/vagrant-docker/tree/master/centos-7[centos-vagrant:7] image by default.
-Alternate images can be used by passing a `VAGRANT_IMAGE` invironment to the `vagrant up` command, for example:
+Alternate images can be used by passing a `VAGRANT_IMAGE` environment to the `vagrant up` command, for example:
 
 ----
 $ VAGRANT_IMAGE=rockyos-vagrant:9.1
